@@ -52,10 +52,10 @@ Created two routes
 - Initial render happends through SSR
 - Second routing is based on filters, when the user selected any option based on the selection page got updated with new data without refreshing the page.
 
-#### Best Cogind practices
+#### Best Coding practices
 
-## Implemented Event delegation in src/components/Filter.js
+- Implemented Event delegation in src/components/Filter.js
 
-## Used React hooks
+- All component is implemented "Single Responsibility principle", "DRY Principle", "Atomic Design Pattern"
 
-## CSS Modules, Sass, and autoprefixer
+- CSS Modules, Sass, and autoprefixer
