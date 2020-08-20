@@ -9,15 +9,12 @@ import App from '../src/components/App';
 import { fetchDataForRender } from './fetchDataForRender';
 import { indexHtml } from './indexHtml';
 import stats from '../build/react-loadable.json';
-import { ServerDataProvider } from '../src/state/serverDataContext';
 
 const ServerApp = ({ context, data, location }) => {
   return (
-    <ServerDataProvider value={data}>
-      <StaticRouter location={location} context={context}>
-        <App />
-      </StaticRouter>
-    </ServerDataProvider>
+    <StaticRouter location={location} context={context}>
+      <App />
+    </StaticRouter>
   );
 };
 
