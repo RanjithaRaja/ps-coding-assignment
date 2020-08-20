@@ -32,7 +32,6 @@ const Filters = props => {
   const [filterStr, setFilterStr] = useState('-1');
 
   const handleFilter = (name, e) => {
-    console.log(e.target.id, filter[name]);
     if (e.target.id !== filter[name]) {
       setFilter({ ...filter, [name]: e.target.id });
     } else {

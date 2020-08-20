@@ -1,18 +1,3 @@
-**What's included:**
-
-- Server-side rendering with code splitting (via the excellent [React Loadable](https://github.com/thejameskyle/react-loadable) package)
-- Server-side data fetching and client-side hydration
-- React Router
-- Conditionally load pollyfills -- only ship bloat to outdated browsers
-- React Helmet for dynamic manipulation of the document `<head />`
-- Dev server with hot reloading styles
-- Jest and react-testing-library ready to test the crap out of some stuff
-- CSS Modules, Sass, and autoprefixer
-- Run-time environment variables
-- Node.js clusters for improved performance under load (in production)
-- Prettier and ESLint run on commit
-- Docker-ized for production like a bawsss
-
 ## Initial setup
 
 - `npm install`
@@ -23,6 +8,19 @@
   - Start the dev server at [http://localhost:3000](http://localhost:3000)
 - `npm test`
   - Start `jest` in watch mode
+
+**What's included:**
+
+- Server-side rendering with code splitting (via the excellent [React Loadable](https://github.com/thejameskyle/react-loadable) package)
+- Server-side data fetching and client-side hydration
+- React Router
+- Conditionally load pollyfills -- only ship bloat to outdated browsers
+- React Helmet for dynamic manipulation of the document `<head />`
+- Dev server with hot reloading styles
+- CSS Modules, Sass, and autoprefixer
+- Run-time environment variables
+- Node.js clusters for improved performance under load (in production)
+- Prettier and ESLint run on commit
 
 ## Production
 
@@ -46,3 +44,18 @@ During development the server code is run with `@babel/register` and middleware 
 The entrypoint for the client-side code (`src/index.js`) first checks if the current browser needs to be polyfilled and then defers to `src/main.js` to hydrate the React application. These two files are only ever called on the client, so you can safely reference any browser APIs here without anything fancy. The rest of the client code is a React application -- in this case a super basic UI w/2 routes, but you can safely modify/delete nearly everything inside `src/` and make it your own.
 
 As with all server-rendered React apps you'll want to be cautious of using browser APIs in your components -- they don't exist when rendering on the server and will throw errors unless you handle them gracefully (I've found some success with using `if (typeof myBrowserAPI !== 'undefined') { ... }` checks when necessary, but it feels dirty so I try to avoid when possible). The one exception to this is the `componentDidMount()` method for class components and `useEffect()` & `useLayoutEffect()` hooks, which are only run on the client.
+
+#### App.js (Where Routing happens)
+
+Created two routes
+
+- Initial render happends through SSR
+- Second routing is based on filters, when the user selected any option based on the selection page got updated with new data without refreshing the page.
+
+#### Best Cogind practices
+
+## Implemented Event delegation in src/components/Filter.js
+
+## Used React hooks
+
+## CSS Modules, Sass, and autoprefixer
