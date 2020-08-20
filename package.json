@@ -7,9 +7,6 @@
     "node": ">=10.15"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "postdeploy": "npm run start",
-    "deploy": "gh-pages -d build",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
